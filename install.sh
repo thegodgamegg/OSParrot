@@ -18,18 +18,14 @@ echo -e "\n${verde}[INICIANDO...]${endColour}\n"
 echo -e "\n${amarillo}[Instalando dependencias]${endColour}\n"
 #Instalando dependencias BSPWM
 sudo apt-get update
-sudo apt-get install build-essential cmake
+sudo apt-get install build-essential cmake -y
 sudo apt-get install xfce4-terminal mousepad caja scrub ranger libssl-dev libffi-dev python-dev build-essential tmux -y
-echo -e "\n${morado}[Dependecias instaladas de BSPWM]${endColour}\n"
-
-
-#sudo apt-get install xfce4-terminal mousepad caja scrub ranger libssl-dev libffi-dev python-dev build-essential tmux -y
+sudo apt-get install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev -y
+sudo apt-get install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev -y
+sudo apt-get install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y
 echo -e "\n${amarillo}[Instalando Complementarios para Papel Tapiz transparencias y menumaestro]${endColour}\n"
 sudo apt-get install rofi compton feh -y
-echo -e "\n${morado}[Dependecias instaladas para Papel Tapiz transparencias y menumaestro]${endColour}\n"
-
 cd /opt/
-
 echo -e "\n${amarillo}[Instalando CrackMapExec]${endColour}\n"
 sudo git clone https://github.com/byt3bl33d3r/CrackMapExec.git
 cd /opt/CrackMapExec/
@@ -43,7 +39,7 @@ cp .tmux/.tmux.conf.local .
 echo -e "\n${morado}[Dependecias instaladas]${endColour}\n"
 
 echo -e "\n${amarillo}[Instalando Chorme Browser]${endColour}\n"
-# Instalación de Chrome Browser 
+# Instalación de Chrome Browser #########################################
 cd ~
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i ~/google-chrome-stable_current_amd64.deb
@@ -52,7 +48,7 @@ sudo apt-get update
 echo -e "\n${morado}[Chrome Browser instalado]${endColour}\n"
 
 echo -e "\n${amarillo}[Instalando Brave Browser]${endColour}\n"
-# Instalación de Brave Browser 
+# Instalación de Brave Browser ##########################################
 cd ~
 sudo apt install apt-transport-https curl -y
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
@@ -66,7 +62,7 @@ echo -e "\n${morado}[Brave Browser instalado]${endColour}\n"
 echo -e "\n${amarillo}[Instalando y configurando bspwm y sxhkd]${endColour}\n"
 # Instalación de bspwm y sxhkd
 cd ~
-sudo apt-get install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y
+sudo apt-get update
 sudo apt-get install bspwm -y 
 cd ~
 git clone https://github.com/thegodgamegg/bspwm.git
@@ -74,8 +70,8 @@ git clone https://github.com/baskerville/sxhkd.git
 cd bspwm && make && sudo make install
 cd ../sxhkd && make && sudo make install
 mkdir -p ~/.config/{bspwm,sxhkd}
-cp /usr/local/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
-cp /usr/local/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
+sudo cp /usr/local/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
+sudo cp /usr/local/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
 chmod u+x ~/.config/bspwm/bspwmrc
 echo -e "\n${morado}[bspwm y sxhkd instaldos y configurados]${endColour}\n"
 
@@ -129,8 +125,6 @@ echo -e "\n${morado}[Hack Nerd Fonts instaldo]${endColour}\n"
 
 echo -e "\n${amarillo}[Instalando la polybar]${endColour}\n"
 # Instalando la polybar
-sudo apt-get install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev -y
-sudo apt-get install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev -y
 cd /opt
 sudo wget https://github.com/polybar/polybar/releases/download/3.4.3/polybar-3.4.3.tar
 sudo tar -xf polybar-3.4.3.tar
