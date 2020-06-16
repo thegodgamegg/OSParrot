@@ -19,10 +19,16 @@ echo -e "\n${amarillo}[Instalando dependencias]${endColour}\n"
 #Instalando dependencias BSPWM
 sudo apt-get update
 sudo apt-get install build-essential cmake -y
-sudo apt-get install xfce4-terminal mousepad caja scrub ranger libssl-dev libffi-dev python-dev build-essential tmux -y
-sudo apt-get install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev -y
-sudo apt-get install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev -y
-sudo apt-get install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y
+sudo apt-get install xfce4-terminal mousepad caja scrub ranger libssl-dev libffi-dev -y
+sudo apt-get install python-dev build-essential tmux -y
+sudo apt-get install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev -y
+sudo apt-get install libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev -y
+sudo apt-get install libxcb-ewmh-dev libxcb-icccm4-dev  python3-xcbgen xcb-proto libxcb-image0-dev -y
+
+sudo apt-get install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev 
+sudo apt-get install libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev -y
+sudo apt-get install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev 
+sudo apt-get install libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y
 echo -e "\n${amarillo}[Instalando Complementarios para Papel Tapiz transparencias y menumaestro]${endColour}\n"
 sudo apt-get install rofi compton feh -y
 cd /opt/
@@ -33,7 +39,7 @@ sudo python3 setup.py install
 echo -e "\n${morado}[Instalado CrackMapExec]${endColour}\n"
 
 cd
-git clone https://github.com/gpakosz/.tmux.git
+sudo git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
 echo -e "\n${morado}[Dependecias instaladas]${endColour}\n"
@@ -67,9 +73,10 @@ sudo apt-get install bspwm -y
 cd ~
 git clone https://github.com/thegodgamegg/bspwm.git
 git clone https://github.com/baskerville/sxhkd.git
-cd bspwm && make && sudo make install
-cd ../sxhkd && make && sudo make install
+cd bspwm && sudo make && sudo make install
+cd ../sxhkd && sudo make && sudo make install
 mkdir -p ~/.config/{bspwm,sxhkd}
+chown -R thegodgamegg:thegodgamegg /home/thegodgamegg
 sudo cp /usr/local/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
 sudo cp /usr/local/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
 chmod u+x ~/.config/bspwm/bspwmrc
@@ -129,7 +136,7 @@ cd /opt
 sudo wget https://github.com/polybar/polybar/releases/download/3.4.3/polybar-3.4.3.tar
 sudo tar -xf polybar-3.4.3.tar
 sudo rm /opt/polybar-3.4.3.tar
-sudo cd /opt/polybar/
+cd /opt/polybar/
 sudo mkdir /opt/polybar/build/
 cd /opt/polybar/build/
 sudo cmake ..
