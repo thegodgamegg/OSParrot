@@ -18,6 +18,7 @@ echo -e "\n${verde}[INICIANDO...]${endColour}\n"
 echo -e "\n${amarillo}[Instalando dependencias]${endColour}\n"
 #Instalando dependencias BSPWM
 sudo apt-get update
+sudo apt-get install build-essential cmake
 sudo apt-get install xfce4-terminal mousepad caja scrub ranger libssl-dev libffi-dev python-dev build-essential tmux -y
 echo -e "\n${morado}[Dependecias instaladas de BSPWM]${endColour}\n"
 
@@ -128,8 +129,8 @@ echo -e "\n${morado}[Hack Nerd Fonts instaldo]${endColour}\n"
 
 echo -e "\n${amarillo}[Instalando la polybar]${endColour}\n"
 # Instalando la polybar
-sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev -y
-sudo apt install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev -y
+sudo apt-get install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev -y
+sudo apt-get install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev -y
 cd /opt
 sudo wget https://github.com/polybar/polybar/releases/download/3.4.3/polybar-3.4.3.tar
 sudo tar -xf polybar-3.4.3.tar
@@ -155,7 +156,7 @@ echo -e "\n${morado}[Modulos creados y configurados]${endColour}\n"
 # Configurando polybar
 cd ~/.config/polybar
 # reemplazar con los nuevos archivos de mi maestro
-wget https://raw.githubusercontent.com/kyb3r-bat/configs_Kyb3rvotarOS/master/themes/config
+wget https://raw.githubusercontent.com/thegodgamegg/OSParrot/master/MasterDownloasFile/config
 cp /opt/polybar/config ~/.config/polybar/config
 
 echo -e "\n${azul}[La polybar ha sido configurada con exito]${endColour}\n"
