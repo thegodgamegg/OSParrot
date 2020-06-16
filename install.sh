@@ -157,7 +157,7 @@ echo -e "\n${morado}[Modulos creados y configurados]${endColour}\n"
 cd ~/.config/polybar
 # reemplazar con los nuevos archivos de mi maestro
 wget https://raw.githubusercontent.com/thegodgamegg/OSParrot/master/MasterDownloasFile/config
-cp /opt/polybar/config ~/.config/polybar/config
+#cp /opt/polybar/config ~/.config/polybar/config
 
 echo -e "\n${azul}[La polybar ha sido configurada con exito]${endColour}\n"
 
