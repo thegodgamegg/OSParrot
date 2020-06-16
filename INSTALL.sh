@@ -18,7 +18,6 @@ echo -e "\n${verde}[INICIANDO...]${endColour}\n"
 echo -e "\n${amarillo}[Instalando dependencias]${endColour}\n"
 #Instalando dependencias BSPWM
 sudo apt-get update
-sudo apt-get install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y
 sudo apt-get install xfce4-terminal mousepad caja scrub ranger libssl-dev libffi-dev python-dev build-essential tmux -y
 echo -e "\n${morado}[Dependecias instaladas de BSPWM]${endColour}\n"
 
@@ -66,7 +65,8 @@ echo -e "\n${morado}[Brave Browser instalado]${endColour}\n"
 echo -e "\n${amarillo}[Instalando y configurando bspwm y sxhkd]${endColour}\n"
 # Instalación de bspwm y sxhkd
 cd ~
-sudo apt-get install bspwm libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y
+sudo apt-get install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y
+sudo apt-get install bspwm -y 
 cd ~
 git clone https://github.com/thegodgamegg/bspwm.git
 git clone https://github.com/baskerville/sxhkd.git
@@ -93,18 +93,11 @@ wget https://raw.githubusercontent.com/thegodgamegg/OSParrot/master/MasterDownlo
 cd ~
 echo -e "\n${morado}[.xinitrc fue creado y configurado]${endColour}\n"
 
-# Configurando el .sxhkdrc
-cd ~/.config/sxhkd/
-rm sxhkdrc
-cd ~/.config/sxhkd/
-wget https://raw.githubusercontent.com/thegodgamegg/OSParrot/master/MasterDownloasFile/sxhkdrc
-
 # Configuración de compton
 echo -e "\n${amarillo}[Creando y configurando el compton.conf]${endColour}\n"
 cd ~/.config/
 mkdir compton
 cd ~/.config/compton/
-# reemplazar con los nuevos archivos de mi maestro
 wget https://raw.githubusercontent.com/thegodgamegg/OSParrot/master/MasterDownloasFile/compton.conf
 echo -e "\n${morado}[compton.conf fue creado y configurado]${endColour}\n"
 
@@ -118,8 +111,7 @@ echo -e "\n${azul}[BSPWM y SXHKD han sido configurados con exito]${endColour}\n"
 
 echo -e "\n${amarillo}[Creando el lanzador de la polybar]${endColour}\n"
 # Creando el lanzador de la polybar
-cd ~
-cd .config
+cd ~/.config
 mkdir polybar
 cd polybar
 wget https://raw.githubusercontent.com/thegodgamegg/OSParrot/master/MasterDownloasFile/launch.sh
@@ -136,8 +128,8 @@ echo -e "\n${morado}[Hack Nerd Fonts instaldo]${endColour}\n"
 
 echo -e "\n${amarillo}[Instalando la polybar]${endColour}\n"
 # Instalando la polybar
-sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
-sudo apt install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
+sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev -y
+sudo apt install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev -y
 cd /opt
 sudo wget https://github.com/polybar/polybar/releases/download/3.4.3/polybar-3.4.3.tar
 sudo tar -xf polybar-3.4.3.tar
