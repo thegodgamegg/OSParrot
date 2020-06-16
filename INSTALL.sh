@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# configuracion ambiente de trabajo parrotOS , thegodgamegg @kyber.bat (Gael González), @s4vitar (Marcelo Vázquez) y @vokin (Víctor Laza), repositorio orginal: 
+# configuracion ambiente de trabajo parrotOS,
+# thegodgamegg @s4vitar (Marcelo Vázquez) y @vokin (Víctor Laza), repositorio orginal: 
 
 # Variables para los colores
 verde="\e[0;32m\033[1m"
@@ -16,13 +17,15 @@ echo -e "\n${verde}[INICIANDO...]${endColour}\n"
 
 echo -e "\n${amarillo}[Instalando dependencias]${endColour}\n"
 #Instalando dependencias BSPWM
-sudo apt-get install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev
+sudo apt-get update
+sudo apt-get install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y
+sudo apt-get install xfce4-terminal mousepad caja scrub ranger libssl-dev libffi-dev python-dev build-essential tmux -y
 echo -e "\n${morado}[Dependecias instaladas de BSPWM]${endColour}\n"
 
 
 #sudo apt-get install xfce4-terminal mousepad caja scrub ranger libssl-dev libffi-dev python-dev build-essential tmux -y
 echo -e "\n${amarillo}[Instalando Complementarios para Papel Tapiz transparencias y menumaestro]${endColour}\n"
-sudo apt install rofi compton feh -y
+sudo apt-get install rofi compton feh -y
 echo -e "\n${morado}[Dependecias instaladas para Papel Tapiz transparencias y menumaestro]${endColour}\n"
 
 cd /opt/
@@ -63,8 +66,9 @@ echo -e "\n${morado}[Brave Browser instalado]${endColour}\n"
 echo -e "\n${amarillo}[Instalando y configurando bspwm y sxhkd]${endColour}\n"
 # Instalación de bspwm y sxhkd
 cd ~
-# Building and Installing
-git clone https://github.com/baskerville/bspwm.git
+sudo apt-get install bspwm libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y
+cd ~
+git clone https://github.com/thegodgamegg/bspwm.git
 git clone https://github.com/baskerville/sxhkd.git
 cd bspwm && make && sudo make install
 cd ../sxhkd && make && sudo make install
@@ -135,7 +139,10 @@ echo -e "\n${amarillo}[Instalando la polybar]${endColour}\n"
 sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
 sudo apt install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
 cd /opt
-sudo git clone https://github.com/polybar/polybar
+sudo wget https://github.com/polybar/polybar/releases/download/3.4.3/polybar-3.4.3.tar
+sudo tar -xf polybar-3.4.3.tar
+sudo rm /opt/polybar-3.4.3.tar
+sudo cd /opt/polybar/
 sudo mkdir /opt/polybar/build/
 cd /opt/polybar/build/
 sudo cmake ..
