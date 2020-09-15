@@ -10,7 +10,7 @@ sudo apt-get install build-essential git cmake cmake-data pkg-config python3-sph
 sudo apt-get install libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev -y
 sudo apt-get install libxcb-ewmh-dev libxcb-icccm4-dev  python3-xcbgen xcb-proto libxcb-image0-dev -y
 
-sudo apt-get install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev -t
+sudo apt-get install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev -Y
 sudo apt-get install libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev -y
 sudo apt-get install libxcb-xinerama0-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev -y
 sudo apt-get install libxcb-ewmh-dev libxcb-keysyms1-dev libxcb-shape0-dev -y
