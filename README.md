@@ -23,8 +23,11 @@ chmod +x install.sh
     POWERLEVEL10k El error consiste en que no puedo configurarlo hasta que no se cree el archivo .p10k.zsh pero este se crea hasta que se configura totalmente el powerlevel10k, para solucionarlo que tendras que hacerlo manualmente aqui los comandos (se deben de ejucatar con el usuario donde se este instalando slightly_smiling_face):
 
 cd ~
+
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+
 zsh
 
 Aqui deberas selecionar la configuración seleccióna cualquiera al azar, una vez teminado cambiaras esto con estos comandos:
