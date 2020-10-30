@@ -26,8 +26,9 @@ cd bspwm && sudo make && sudo make install
 cd ../sxhkd && sudo make && sudo make install
 mkdir -p ~/.config/{bspwm,sxhkd}
 chown -R thegodgamegg:thegodgamegg /home/thegodgamegg
-sudo cp /usr/local/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
-sudo cp /usr/local/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
+
+sudo cp /home/thegodgamegg/bspwm/examples/bspwmrc ~/.config/bspwm/
+sudo cp /home/thegodgamegg/bspwm/examples/sxhkdrc ~/.config/sxhkd/
 chmod u+x ~/.config/bspwm/bspwmrc
 echo -e "\n${morado}[bspwm y sxhkd instaldos y configurados]${endColour}\n"
 
